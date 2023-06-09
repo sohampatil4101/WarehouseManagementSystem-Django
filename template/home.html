@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block log %}
+{% if username %}
+<li class="nav-item mx-4  ">
+  <a class="nav-link my-2 mx-4 bold font-weight-bold" style="color: black;" href="/logout">Logout</a>
+</li>
+{% else %}
+<li class="nav-item mx-4  ">
+<a class="nav-link my-2 mx-4 bold font-weight-bold" style="color: black;" href="/login">Login</a>
+</li>
+{% endif %}
+{% endblock log %}
+{% block body %}
+
+
+
+
+
+
+{% if username %}
+<div class="d-flex">
+    <div class=" p-2">
+        <a class="btn btn-warning" href="/addwarehouse" >Add new Warehouse</a>
+    </div>
+</div>
+
+
+
+<div class="container row mx-auto">
+    {% for so in so %}
+    <div class="card md-4 mx-3 my-3 mb-4" style="width: 18rem">
+        
+        {% if so.images %}
+        <img src="{{so.images.url}}" width="99" height="150" class="card-img-top" alt="...">
+        {% else %}
+        
+        <img src="{% static 'D:\Warehouse\warehouse\static\bg.jpg' %}"  width="99" height="150" class="card-img-top" alt="..." >
+      {% endif %}
+        <div class="card-body">
+        <h5 class="card-title"> {{so.warehousename}}</h5>
+        <p class="card-text">Area: {{so.area}}</p>
+        <p class="card-text">Date:{{so.date}}</p>
+        
+<div class="d-flex">
+    <div class="mr-auto p-2">
+        <a class="btn btn-success" href="/viewhouse/{{so.username}}/{{so.warehousename}}" >View</a>
+    </div>
+    <div class="mr-auto p-2">
+        <a class="btn btn-danger" href="/deletewarehouse/{{so.username}}/{{so.warehousename}}" >delete</a>  
+    </div>
+</div>
+
+        
+        </div>
+        </div>
+    {% endfor %}
+
+  </div>
+
+
+
+{% else %}
+<div class="container row mx-auto ">
+    <div class="card border-primary mb-5 mx-3" style="max-width: 18rem;">
+        <div class="card-header">What is Warehouse?</div>
+    <div class="card-body text-danger">
+        <h5 class="card-title">A warehouse is a commercial building for storage of goods. Warehouses are used by manufacturers, importers, etc</h5>
+        <p class="card-text">. They are usually large plain buildings in industrial parks on the outskirts of cities, towns or villages. They usually have loading docks to load and unload goods from trucks..</p>
+    </div>
+</div>
+<div class="card border-secondary mb-5 mx-3" style="max-width: 18rem;">
+    <div class="card-header">What are benifits of warehouse?</div>
+    <div class="card-body text-warning">
+      <h5 class="card-title">By warehousing your products, you delegate the former responsibilities to staff members. </h5>
+      <p class="card-text">Warehouses provide a centralized location for your goods, making it easier to track and manage your inventory. By investing in a warehouse, you'll store, ship and distribute products more efficiently..</p>
+    </div>
+</div>
+  <div class="card border-success mb-5 mx-3" style="max-width: 18rem;">
+    <div class="card-header">warehouse-help's grow buisness</div>
+    <div class="card-body text-info">
+        <h5 class="card-title">As a result, businesses can cut costs by optimizing purchase strategies and speeding up delivery times to customers </h5>
+        <p class="card-text">Quickly and easily complete your Warehouse business plan by downloading Growthink’s Ultimate Business Plan Template and creating your plan and financial model in just hours .</p>
+    </div>
+</div>
+</div>
+</div>
+
+{% endif %}
+
+
+{% endblock body %}

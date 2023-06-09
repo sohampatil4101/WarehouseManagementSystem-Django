@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <!-- CSS only -->
+        <link href=
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            rel="stylesheet" />
+        <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+        <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+        </script>
+      
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>
+        <title>warehouse {% block title %}{% endblock title %} </title>
+      </head>
+<body>
+    
+    <div class="container my-3" style="width: 100%;">
+        <nav class="navbar  navbar-expand-lg navbar-light mx-5 mb-2 rounded "  >
+          <div class="collapse navbar-collapse mb-5 soham" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto ">
+            
+              <li class="nav-item mx-4">
+                <a class="nav-link my-2 mx-4 bold font-weight-bold" style="color: black;" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item  mx-4 ">
+                <a class="nav-link my-2 mx-4 bold font-weight-bold" style="color: black;" href="/about">About us</a>
+              </li>
+              <li class="nav-item mx-4 ">
+            <a class="nav-link my-2 mx-4 bold font-weight-bold" style="color: black;" href="/contact">Contact us</a>
+          </li>
+          
+          {% block log %}
+          {% endblock log %}
+        
+          <li class="nav-item mx-4">
+            <a class="nav-link my-2 mx-4 bold font-weight-bold" style="color: black;" href="/register">Register</a>
+          </li>   
+        </ul>
+        
+      </div>
+        </nav>
+  {% block body %}
+  
+  {% endblock body %}
+      </div>
+    
+    
+<style>
+
+    body{
+        background-image: url("{% static 'D:\Warehouse\warehouse\static\bg.jpg' %}" );
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+    }
+    .soham{
+    border: 4px solid rgb(49, 18, 6);
+    border-radius: 50px;
+    }
+
+    .bod{
+      
+    border: 2px solid rgb(49, 18, 6);
+    }
+
+    
+
+
+    .content{
+      color: rgb(0, 0, 0);
+    border: 2px solid rgb(49, 18, 6);
+
+    }
+</style>
+
+
+
+
+</body>
+</html>
