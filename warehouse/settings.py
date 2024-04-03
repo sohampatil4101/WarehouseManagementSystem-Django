@@ -48,8 +48,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     #pip install django-admin-interface
-    'admin_interface',
-    'colorfield',
     'app',
     'django.contrib.admin',
     'django.contrib.auth',
