@@ -150,7 +150,7 @@ def deleteproduct(request, obj1, obj2, obj3):
 def addproduct(request, obj1):
     context = {'success': False, 'successs':False}
     if request.method == "POST":
-        abc = obj1
+        # kt = obj1
         username = request.session.get('username')
         warehousename = obj1
         goodname = request.POST.get('goodname')
@@ -166,7 +166,7 @@ def addproduct(request, obj1):
             return render(request, 'addproduct.html', context)
 
         else:
-            ins = Good(abc = abc, username = username,warehousename = warehousename,goodname = goodname,lenght = lenght,bredth = bredth,height = height,images = images,area = area,date = date)
+            ins = Good(username = username,warehousename = warehousename,goodname = goodname,lenght = lenght,bredth = bredth,height = height,images = images,area = area,date = date)
             ins.save()
             context={ 'warehousename': obj1}
 

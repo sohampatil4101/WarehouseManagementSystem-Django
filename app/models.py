@@ -44,7 +44,7 @@ class Warehouse(models.Model):
 
 
 class Good(models.Model):
-    abc = models.ForeignKey(Warehouse, on_delete=models.CASCADE, blank = True, null = True)
+    # abc = models.ForeignKey(Warehouse, on_delete=models.CASCADE, blank = True, null = True)
     username = models.TextField(max_length = 20)
     warehousename  = models.TextField(max_length = 20, default = 0)  
     goodname  = models.TextField(max_length = 20)
